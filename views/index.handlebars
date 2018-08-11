@@ -1,0 +1,51 @@
+<div class="container mt-2 text-center">
+    <h1 class="display-4">Eat Da Burger</h1>
+    <p>Full Stack CRUD App</p>
+</div>
+
+<div class="container">
+    {{!-- Row that contains burger entries --}}
+    <div class="row">
+        <div class="col-6 text-left">
+            <div id="burgers-true">
+                <ul>
+                    {{#each burger}}
+                        {{#unless devoured}}
+                            <li id="{{id}}">
+                                {{id}}: {{burger_name}}
+                                <button class="devour" type="submit" data="{{id}}">Devour Da Burger!</button>
+                            </li>
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-6 text-right">
+            {{!-- devoured burgers go here --}}
+            <div id="burgers-false">
+                <ul>
+                    {{#each burger}}
+                        {{#if devoured}}
+                            <li id="{{id}}">
+                                {{burger_name}}
+                                <button class="delete" data-target="{{id}}">Delete Da Burger</button>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{!-- Row that contains entry for new burger --}}
+    <div class="row mt-5 text-center">
+        <div class="col-12">
+            <form>
+                <div class="form-group">
+                    <input class="form-control" id="burgerName"></input>
+                </div>
+                <button type="submit" id="create-burger" class="btn btn-warning">Create Da Burger</button>
+            </form>
+            <p class="mt-3 lead">Enter a burger you want to create then Create Da Burger</p>
+        </div>
+    </div>
+</div>

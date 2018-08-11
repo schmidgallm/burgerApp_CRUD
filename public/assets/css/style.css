@@ -1,0 +1,12 @@
+ul:nth-child(1){
+    padding-left: 0;
+}
+
+ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.devoured {
+    display: inline-block;
+}
